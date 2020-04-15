@@ -32,7 +32,9 @@ namespace CarPoolAPI.Controllers
         {
             return _repos.GetById(id);
         }//DONE
-
+        public User Update([FromBody] UserDTO user){
+           return _repos.Update(user);
+        }
         [HttpGet]
         public bool Login([FromQuery]int userid, [FromQuery]string password)
         {
