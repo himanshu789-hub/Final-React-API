@@ -27,7 +27,17 @@ namespace CarPoolAPI.RepositoryProcessory
 
             return addedUser.Entity;
         }   //DONE
-
+        public User Update(UserDTO user){
+         User User =   _context.Users.FirstOrDefault(e=>e.Id==user.id);
+         User.Name = user.name;
+         User.ImageUploadedName = user.imageUploadedName;
+         User.EmailId = user.emailId;  
+         User.Age = user.age;
+         User.Gender = user.gender;
+         User.Password = user.password;
+        _context.SaveChanges();
+        return User;
+        }
         public bool Delete(int userId)
         {
             using (var context = new CarPoolContext())
