@@ -263,18 +263,16 @@ class Form extends React.Component<IFormProps, IFormState> {
      const {ImageSelected} = this.state;
      tempUser.imageUploadedName = ImageSelected;
     }
-    tempUser = UserService.Update(tempUser);
+    await axios.put(APIServer+'Users/Update',tempUser).then(res=>{
+      tempUser = res.data;
+    });
    } else {
     await this.ImageUpload();
     const {ImageSelected} = this.state;
 	   tempUser.imageUploadedName = ImageSelected;
-	   axios.post(APIServer + 'User/Create', tempUser).then((response) => {
-		   debugger;
-	   });
-     tempUser = UserService.Create({
-       emailId: tempUser.emailId, name: tempUser.name, password: tempUser.password,
-       age: tempUser.age,gender:tempUser.gender,imageUploadedName:tempUser.imageUploadedName
-     });
+	  await axios.post(APIServer + 'User/Create', tempUser).then(res=>{
+      tempUser = res.data;
+    });
    }
    history.push('/home/' + tempUser.id + '/content');
   }
