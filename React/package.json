@@ -33,7 +33,7 @@
         "font-awesome": "^4.7.0",
         "history": "^4.10.1",
         "nodemon": "^2.0.2",
-        "qs": "^6.9.3",
+        "qs": "^6.9.7",
         "react": "^16.13.1",
         "react-datetime-picker": "^3.0.1",
         "react-dom": "^16.13.1",
