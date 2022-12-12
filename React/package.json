@@ -27,7 +27,7 @@
         "bingmaps": "^2.0.3",
         "cors": "^2.8.5",
         "css-loader": "^3.4.2",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "express-fileupload": "^1.1.6",
         "file-loader": "^6.0.0",
         "font-awesome": "^4.7.0",
